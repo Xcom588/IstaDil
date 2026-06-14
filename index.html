@@ -1,21 +1,273 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My istadil Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IstaDil</title>
+
 <style>
-body{
-font-family:Arial;
-text-align:center;
-padding-top:100px;
-background:#f5f5f5;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
-h1{
-color:#2563eb;
+
+body{
+font-family:Arial, sans-serif;
+background:#0f0f10;
+color:white;
+line-height:1.6;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#111;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:1.5rem;
+font-weight:bold;
+background:linear-gradient(90deg,#ffd700,#ff4fa3);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+margin-left:15px;
+font-size:14px;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+background:linear-gradient(90deg,#ffd700,#ff4fa3);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#bbb;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 28px;
+border-radius:50px;
+text-decoration:none;
+background:linear-gradient(90deg,#ffd700,#ff4fa3);
+color:black;
+font-weight:bold;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:50px 20px;
+text-align:center;
+}
+
+.stat{
+background:#181818;
+padding:25px;
+border-radius:15px;
+}
+
+.number{
+font-size:2rem;
+font-weight:bold;
+color:#ffd700;
+}
+
+.features{
+padding:60px 20px;
+}
+
+.features h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#181818;
+padding:25px;
+border-radius:15px;
+}
+
+.about{
+padding:60px 20px;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#888;
+border-top:1px solid #222;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2rem;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+nav{
+display:none;
+}
+
 }
 </style>
 </head>
+
 <body>
-<h1> istadil Website Working Successfully 🚀</h1>
-<p>Hosted on Cloudflare Pages</p>
+
+<header>
+<div class="logo">⭐❤️ IstaDil</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#features">Features</a>
+<a href="#about">About</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Where Hearts Connect Authentically</h1>
+
+<p>
+Discover meaningful relationships in a premium, safe and modern community designed for genuine connections.
+</p>
+
+<a href="#" class="btn">Join IstaDil</a>
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<div class="number" data-target="5000">0</div>
+<p>Members</p>
+</div>
+
+<div class="stat">
+<div class="number" data-target="1200">0</div>
+<p>Matches</p>
+</div>
+
+<div class="stat">
+<div class="number" data-target="150">0</div>
+<p>Cities</p>
+</div>
+
+</section>
+
+<section class="features" id="features">
+
+<h2>Why Choose IstaDil?</h2>
+
+<div class="feature-grid">
+
+<div class="card">
+<h3>🔒 Secure Profiles</h3>
+<p>Privacy-first experience with trusted profile management.</p>
+</div>
+
+<div class="card">
+<h3>❤️ Smart Matching</h3>
+<p>Designed to help people build meaningful connections.</p>
+</div>
+
+<div class="card">
+<h3>💬 Private Chat</h3>
+<p>Comfortable conversations in a secure environment.</p>
+</div>
+
+<div class="card">
+<h3>✅ Verified Community</h3>
+<p>A premium community focused on authenticity.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>About IstaDil</h2>
+
+<p>
+IstaDil is a modern relationship platform focused on genuine human connections. Our mission is to create a beautiful and trustworthy environment where meaningful relationships can grow naturally.
+</p>
+
+</section>
+
+<footer>
+© 2025 IstaDil. All Rights Reserved.
+</footer>
+
+<script>
+
+const counters=document.querySelectorAll('.number');
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.getAttribute('data-target');
+const current=+counter.innerText;
+
+const increment=target/80;
+
+if(current<target){
+
+counter.innerText=Math.ceil(current+increment);
+
+setTimeout(update,20);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+update();
+
+});
+
+</script>
+
 </body>
 </html>
