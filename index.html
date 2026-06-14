@@ -3,139 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IstaDil</title>
+
+<title>IstaDil - Where Hearts Connect</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, sans-serif;
-background:#0f0f10;
+font-family:Arial,sans-serif;
+background:#0b0b0f;
 color:white;
-line-height:1.6;
+overflow-x:hidden;
 }
 
 header{
+position:sticky;
+top:0;
+z-index:1000;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#111;
-border-bottom:1px solid #222;
-position:sticky;
-top:0;
-z-index:100;
+padding:18px 24px;
+background:rgba(10,10,15,0.95);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #1f1f25;
 }
 
 .logo{
-font-size:1.5rem;
+font-size:1.8rem;
 font-weight:bold;
 background:linear-gradient(90deg,#ffd700,#ff4fa3);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
+nav{
+display:flex;
+gap:18px;
+}
+
 nav a{
-color:#ddd;
 text-decoration:none;
-margin-left:15px;
+color:#ddd;
 font-size:14px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffd700;
 }
 
 .hero{
-padding:80px 20px;
+min-height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+padding:20px;
 }
 
 .hero h1{
-font-size:3rem;
-margin-bottom:20px;
-background:linear-gradient(90deg,#ffd700,#ff4fa3);
+font-size:4rem;
+max-width:900px;
+line-height:1.2;
+background:linear-gradient(90deg,#ffd700,#ff8fc7);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+margin-bottom:20px;
 }
 
 .hero p{
 max-width:700px;
-margin:auto;
-color:#bbb;
+color:#b8b8b8;
+font-size:1.1rem;
+line-height:1.8;
 }
 
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:14px 28px;
+margin-top:35px;
+padding:16px 34px;
 border-radius:50px;
 text-decoration:none;
+font-weight:bold;
 background:linear-gradient(90deg,#ffd700,#ff4fa3);
 color:black;
-font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
 }
 
 .stats{
+padding:60px 20px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:50px 20px;
-text-align:center;
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
 .stat{
-background:#181818;
-padding:25px;
-border-radius:15px;
+background:#131318;
+padding:35px;
+border-radius:18px;
+text-align:center;
 }
 
 .number{
-font-size:2rem;
+font-size:2.5rem;
 font-weight:bold;
 color:#ffd700;
 }
 
 .features{
-padding:60px 20px;
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
 }
 
 .features h2{
 text-align:center;
+font-size:2.3rem;
 margin-bottom:40px;
 }
 
 .feature-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-background:#181818;
-padding:25px;
-border-radius:15px;
+background:#131318;
+padding:28px;
+border-radius:18px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+margin-bottom:12px;
 }
 
 .about{
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
 max-width:900px;
 margin:auto;
 }
 
-footer{
+.about h2{
+margin-bottom:20px;
+font-size:2.2rem;
+}
+
+.about p{
+color:#bdbdbd;
+line-height:1.8;
+}
+
+.cta{
+padding:80px 20px;
 text-align:center;
+}
+
+.cta h2{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+footer{
 padding:30px;
-color:#888;
+text-align:center;
 border-top:1px solid #222;
+color:#888;
 margin-top:50px;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:2rem;
+font-size:2.4rem;
 }
 
 .stats{
@@ -143,34 +203,49 @@ grid-template-columns:1fr;
 }
 
 nav{
-display:none;
+gap:10px;
+}
+
+nav a{
+font-size:12px;
+}
+
+.logo{
+font-size:1.4rem;
 }
 
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">⭐❤️ IstaDil</div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#features">Features</a>
-<a href="#about">About</a>
-<a href="#">Contact</a>
+<a href="index.html">Home</a>
+<a href="features.html">Features</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 </nav>
+
 </header>
 
 <section class="hero">
+
 <h1>Where Hearts Connect Authentically</h1>
 
 <p>
-Discover meaningful relationships in a premium, safe and modern community designed for genuine connections.
+Discover meaningful relationships in a premium, secure and beautifully designed community built for genuine human connection.
 </p>
 
-<a href="#" class="btn">Join IstaDil</a>
+<a href="contact.html" class="btn">
+Join IstaDil
+</a>
+
 </section>
 
 <section class="stats">
@@ -192,7 +267,7 @@ Discover meaningful relationships in a premium, safe and modern community design
 
 </section>
 
-<section class="features" id="features">
+<section class="features">
 
 <h2>Why Choose IstaDil?</h2>
 
@@ -222,13 +297,25 @@ Discover meaningful relationships in a premium, safe and modern community design
 
 </section>
 
-<section class="about" id="about">
+<section class="about">
 
 <h2>About IstaDil</h2>
 
 <p>
-IstaDil is a modern relationship platform focused on genuine human connections. Our mission is to create a beautiful and trustworthy environment where meaningful relationships can grow naturally.
+IstaDil is built for people looking for meaningful relationships in a trusted environment. We focus on authenticity, privacy and quality connections.
 </p>
+
+</section>
+
+<section class="cta">
+
+<h2>Ready To Begin Your Journey?</h2>
+
+<p>Join our growing community today.</p>
+
+<a href="contact.html" class="btn">
+Get Started
+</a>
 
 </section>
 
@@ -247,11 +334,11 @@ const update=()=>{
 const target=+counter.getAttribute('data-target');
 const current=+counter.innerText;
 
-const increment=target/80;
+const increment=Math.ceil(target/80);
 
 if(current<target){
 
-counter.innerText=Math.ceil(current+increment);
+counter.innerText=current+increment;
 
 setTimeout(update,20);
 
